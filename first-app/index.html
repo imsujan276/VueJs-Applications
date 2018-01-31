@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+
+	<style type="text/css">
+		.is-loading{
+			color: red;
+			padding: 10px;
+		}
+
+		.col-md-6{
+			padding: 20px 0;
+		}
+		h3{
+			padding-bottom: 10px;
+			font-weight: bold;
+		}
+		p {
+			    font-weight: bold;
+			}
+
+
+	</style>
+
+</head>
+<body>
+	
+	<div id="root">
+		
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6">
+					 <h3> Data Binding </h3>
+					<input type="text" id="input" v-model="message">
+
+					<p> This is the input message : {{ message }}</p>
+
+				</div>
+
+				<div class="col-md-6">
+					<h3> Array </h3>
+					<ul>
+						<li v-for="color in colors" v-text="color"></li>
+					</ul>
+					
+					<input type="text" id="name" v-model="newName">
+					<button @click="addColors"> Add Color </button>
+				</div>
+
+
+				
+				<div class="col-md-6">
+					<h3> Attritute Binding </h3>
+
+					<!-- :class == v-bind:class  && @click == v-on:click -->
+					<button :class="{ 'is-loading': isLoading} " @click="toggleMe">
+						Toggle Me 
+					</button> 
+				</div>
+
+				<div class="col-md-6">
+					<h3> Computed Properties </h3>
+
+					<p> All Tasks </p>
+					<ul>
+						<li v-for="task in tasks" > {{task.title}}  ({{task.completed}})</li>
+					</ul>
+
+					<p> Incomplete Tasks </p>
+					<ul>
+						<li v-for="task in incompleteTasks" v-text="task.title"></li>
+					</ul>
+				</div>
+
+				<div class="col-md-6">
+					<h3> Vue Components </h3>
+					
+					<task-list> </task-list>
+
+					<task> My custom Task </task>
+				</div>
+
+				<div class="col-md-6">
+					<h3> Vue Components with attribute </h3>
+
+					<message-panel title="Message Title" message="this is my message">  </message-panel>
+				</div>
+
+				<div class="col-md-6">
+					<h3> Vue Component ( Modal Toggle )
+					
+					<br><br>
+					<modal v-if="showModal"  @close="showModal = false">
+							<p> Any text HERE </p>
+					</modal>
+
+					<button @click="showModal = true"> Show Modal </button>
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</div>
+	
+
+	
+	<!-- accessing vue.js externally -->
+	<script type="text/javascript" src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+
+	<script src="main.js"> </script>
+
+</body>
+</html>

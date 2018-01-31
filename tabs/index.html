@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue Tabs</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+</head>
+<body>
+
+	<div id="root" class="container">
+		
+		<tabs>
+
+			<tab name="Home" :selected="true">
+				<strong><p>This is the home </p></strong>
+				<p>
+					lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum 
+				</p>
+			</tab>
+			
+			<tab name="About Us">
+				<p>this is the about </p>
+			</tab>
+
+			<tab name="Contact Us">
+				<p>this is the contact </p>
+			</tab>
+
+			<tab name="Blog">
+				<p> This is the blog </p>
+			</tab>
+
+		</tabs>
+
+	</div>
+
+
+		<!-- accessing vue.js externally -->
+	<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+
+	<script src="main.js"> </script>
+
+</body>
+</html>
